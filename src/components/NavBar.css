@@ -1,0 +1,16 @@
+.color{
+    color: red;
+}
+
+.color:hover{
+    color: white;
+}
+
+.navBackground{
+    background-color: black;
+}
+
+.imgLogo{
+    max-width: 100px;
+    max-height: 100px;
+}
