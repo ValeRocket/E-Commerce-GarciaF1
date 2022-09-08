@@ -1,10 +1,11 @@
 import "./NavBar.css"
+import CartWidget from "./CartWidget";
 
 
 function Navegacion(){
 return(
 <div className="">
-    <nav className="navbar navbar-expand-lg navbar-light navBackground">
+    <nav className="navbar navbar-expand-lg navBackground">
         <div className="container-fluid">
             <a href="#" className="navbar-brand">
             <img className="imgLogo" src={require("./f1logo.png")} alt="Formula 1 Shop"/>
@@ -22,7 +23,7 @@ return(
                     <a href="#" className="nav-item nav-link color">Cuadros</a>
                 </div>
                 <div className="navbar-nav ms-auto">
-                    <a href="#" className="nav-item nav-link color">Carrito</a>
+                    <CartWidget/>
                 </div>
             </div>
         </div>

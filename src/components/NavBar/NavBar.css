@@ -14,3 +14,11 @@
     max-width: 100px;
     max-height: 100px;
 }
+
+.iconMargin{
+    margin: 10px;
+}
+
+.iconMargin:hover{
+    color: white;
+}

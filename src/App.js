@@ -1,10 +1,16 @@
 import './App.css';
-import "./components/NavBar.css"
-import Navegacion from "./components/NavBar"
+import "./components/NavBar/NavBar.css"
+import Navegacion from "./components/NavBar/NavBar"
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
-    <Navegacion />
+    <div>
+      <Navegacion />
+      <ItemListContainer greeting="Formula 1 Store" />
+    </div>
+    
+   
   );
 }
 
