@@ -1,4 +1,5 @@
 import "./ItemListContainer.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 function Cards(props){
     let{img,title,price}=props
@@ -8,7 +9,8 @@ function Cards(props){
     <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <h3 className="card-text">${price}</h3>
-        <a href="#" className="btn btn-primary">Comprar</a>
+        <ItemCount initial={1} stock={10} />
+        <a href="#" className="btn btn-primary">Agregar al carrito</a>
     </div>
 </div>
     )
