@@ -22,3 +22,7 @@
 .iconMargin:hover{
     color: white;
 }
+
+.iconMargin stroke:hover{
+    color: white;
+}
