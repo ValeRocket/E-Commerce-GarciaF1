@@ -23,7 +23,7 @@ console.log("stock:", props.stock)
   function handleClickResta() {
     if(count == 1){
       swal({
-        title: "No puedes comprar menos de 1 producto",
+        title: "No puedes comprar menos de 1 producto ",
         icon: "error"
       });
   }else{
