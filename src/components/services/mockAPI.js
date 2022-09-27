@@ -14,7 +14,7 @@ const data = [
         price: 3800,
         stock: 10,
         category: "gorras",
-        detail: "gorra ferrari",
+        detail: "gorra ferrari ",
         img: "https://http2.mlstatic.com/D_NQ_NP_953322-MLA47816216346_102021-O.webp",
     },
     {
@@ -28,7 +28,7 @@ const data = [
     }
 ];
 
- function getItems() {
+ export default function getItems() {
     return new Promise((resolve,reject) =>{
         setTimeout(() =>{
             resolve(data);
@@ -36,4 +36,13 @@ const data = [
     });
 }
 
-export default getItems
+export function getSingleItems(){
+
+    return new Promise((resolve, reject) => {
+        
+        setTimeout(( ) => {
+            resolve(data[0])
+        }, 500);
+    })
+
+}
