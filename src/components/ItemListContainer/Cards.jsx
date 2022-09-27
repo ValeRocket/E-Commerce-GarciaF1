@@ -1,5 +1,6 @@
 import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
+import ItemDetail from "../ItemDetailContainer/ItemDetail";
 
 function Cards(props){
     let{img,title,price}=props

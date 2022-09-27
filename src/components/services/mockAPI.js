@@ -5,7 +5,7 @@ const data = [
         price: 6500,
         stock: 10,
         category: "chombas",
-        detail: "Chomba redbull 100% algodon",
+        detail: "Chomba RedBull Aston Martin 100% Algodon",
         img: "https://http2.mlstatic.com/D_NQ_NP_964914-MLA45304791235_032021-O.webp",
     },
     {

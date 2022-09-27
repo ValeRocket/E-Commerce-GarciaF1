@@ -13,7 +13,6 @@ function ItemDetailContainer() {
     return (
         <ItemDetail 
             key={data.id} 
-            title={data.title}
             detail={data.detail}/>
     )
 }
