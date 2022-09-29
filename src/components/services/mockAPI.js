@@ -4,7 +4,7 @@ const data = [
         title: "Chomba Redbull",
         price: 6500,
         stock: 10,
-        category: "chombas",
+        category: "remeras",
         detail: "Chomba RedBull Aston Martin 100% Algodon",
         img: "https://http2.mlstatic.com/D_NQ_NP_964914-MLA45304791235_032021-O.webp",
     },
@@ -14,7 +14,7 @@ const data = [
         price: 3800,
         stock: 10,
         category: "gorras",
-        detail: "gorra ferrari ",
+        detail: "Gorra Ferrari Bordada",
         img: "https://http2.mlstatic.com/D_NQ_NP_953322-MLA47816216346_102021-O.webp",
     },
     {
@@ -23,7 +23,7 @@ const data = [
         price: 7900,
         stock: 10,
         category: "buzos",
-        detail: "buzo mercedes 100% algodon",
+        detail: "Buzo Mercedes 100% algodon",
         img: "https://http2.mlstatic.com/D_NQ_NP_720238-MLA50995928757_082022-O.webp",
     }
 ];
@@ -32,17 +32,29 @@ const data = [
     return new Promise((resolve,reject) =>{
         setTimeout(() =>{
             resolve(data);
-        },1500);
+        },);
     });
 }
 
-export function getSingleItems(){
-
+export function getItemsByCategory(cat){
     return new Promise((resolve, reject) => {
-        
-        setTimeout(( ) => {
-            resolve(data[0])
-        }, 500);
-    })
+        let itemFind = data.filter((item)=>{
+            return item.category === cat
+        })  
 
+        if(itemFind) resolve(itemFind);
+        else reject(new Error("Item no encontrado"))
+    })
+}
+
+export function getSingleItems(idItem){
+    return new Promise((resolve, reject) => {
+        let itemFind = data.find((item)=>{
+            console.log(item.id, idItem)
+            return item.id === idItem
+        })  
+
+        if(itemFind) resolve(itemFind);
+        else reject(new Error("Item no encontrado"))
+    })
 }

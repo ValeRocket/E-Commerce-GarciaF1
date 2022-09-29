@@ -8,9 +8,9 @@ function ItemList(props){
             <div className="cardsFlex" >
                 {
                     props.data.map((item) =>{
-                        console.log(item);
                         return <Cards
-                            key={item.div}
+                            id={item.id}
+                            key={item.id}
                             price={item.price}
                             title={item.title}
                             img={item.img}

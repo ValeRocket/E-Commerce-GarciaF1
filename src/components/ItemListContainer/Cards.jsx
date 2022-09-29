@@ -1,9 +1,12 @@
 import "./ItemListContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 import ItemDetail from "../ItemDetailContainer/ItemDetail";
+import {Link} from "react-router-dom"
 
 function Cards(props){
-    let{img,title,price}=props
+    let{img,title,price}= props
+    const urlDetail = `/producto/${props.id}`
+
     return(
 <div className="card cardsStyle" style={{width: 300}}>
         <img src={img} className="card-img-top" alt="..."/>
@@ -12,6 +15,11 @@ function Cards(props){
         <h3 className="card-text">${price}</h3>
         <ItemCount initial={1} stock={10} />
         <a href="#" className="btn btn-primary">Agregar al carrito</a>
+
+        <Link to={urlDetail}>
+        <button className="btn btn-primary">Ver mas</button>
+        </Link>
+
     </div>
 </div>
     )

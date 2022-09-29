@@ -5,8 +5,6 @@ import "./ItemCount.css"
 
 function ItemCount(props){
 const [count, setCount] = React.useState(props.initial)
-console.log("stock:", props.stock)
-
 
   function handleClickSuma() {
     if(count == props.stock){

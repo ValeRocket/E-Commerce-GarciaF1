@@ -6,6 +6,7 @@ function ItemDetail(props) {
             <div className='box'><img src="" alt="" /></div>
             <div className='box'>
                 <h1>{props.title}</h1>
+                <p>{props.price}</p>
                 <p>{props.detail}</p>
             </div>
         </div>
