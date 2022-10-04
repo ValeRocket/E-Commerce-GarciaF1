@@ -38,11 +38,10 @@ const data = [
 
 export function getItemsByCategory(cat){
     return new Promise((resolve, reject) => {
-        let itemFind = data.filter((item)=>{
+        let itemFilter = data.filter((item)=>{
             return item.category === cat
-        })  
-
-        if(itemFind) resolve(itemFind);
+        });  
+        if(itemFilter) resolve(itemFilter);
         else reject(new Error("Item no encontrado"))
     })
 }
@@ -50,10 +49,8 @@ export function getItemsByCategory(cat){
 export function getSingleItems(idItem){
     return new Promise((resolve, reject) => {
         let itemFind = data.find((item)=>{
-            console.log(item.id, idItem)
-            return item.id === idItem
-        })  
-
+            return item.id === Number(idItem)
+        });  
         if(itemFind) resolve(itemFind);
         else reject(new Error("Item no encontrado"))
     })

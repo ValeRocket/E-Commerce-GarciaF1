@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import ItemDetailContainer from './ItemDetailContainer'
 
 function ItemDetail(props) {
     return (
@@ -10,7 +9,7 @@ function ItemDetail(props) {
                 <h1>{props.title}</h1>
                 <p>{props.price}</p>
                 <p>{props.detail}</p>
-                <ItemCount initial={1} stock={10} />
+                <ItemCount initial={1} stock={props.stock} />
             </div>
         </div>
     )

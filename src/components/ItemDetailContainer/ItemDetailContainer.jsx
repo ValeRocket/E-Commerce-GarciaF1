@@ -6,8 +6,7 @@ import {useParams} from 'react-router-dom';
 function ItemDetailContainer() {
     let [data, setData] = useState({});
 
-    const params = useParams()
-    const id = params.id
+ const { id } = useParams()
 
     useEffect(() => {
         getSingleItems(id).then((respuestaDatos) => 
