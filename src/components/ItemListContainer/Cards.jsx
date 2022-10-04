@@ -13,9 +13,8 @@ function Cards(props){
     <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <h3 className="card-text">${price}</h3>
-        <ItemCount initial={1} stock={10} />
         <a href="#" className="btn btn-primary">Agregar al carrito</a>
-
+        <ItemCount initial={1} stock={10} />
         <Link to={urlDetail}>
         <button className="btn btn-primary">Ver mas</button>
         </Link>

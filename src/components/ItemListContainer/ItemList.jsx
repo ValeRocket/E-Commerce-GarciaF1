@@ -1,13 +1,12 @@
 import Cards from "./Cards";
-import data from "./ItemListContainer";
 
 
-function ItemList(props){
+function ItemList({ data }) {
     return(
         <div>
             <div className="cardsFlex" >
                 {
-                    props.data.map((item) =>{
+                    data.map((item) =>{
                         return <Cards
                             id={item.id}
                             key={item.id}
