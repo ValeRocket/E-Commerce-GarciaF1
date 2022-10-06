@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 function Cards(props){
     let{img,title,price} = props
-    const urlDetail = `/producto/${props.id}-${props.title}`
+    const urlDetail = `/producto/${props.id}`
 
     return(
 <div className="card cardsStyle" style={{width: 300}}>

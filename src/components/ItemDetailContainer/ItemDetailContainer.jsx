@@ -6,17 +6,17 @@ import {useParams} from 'react-router-dom';
 function ItemDetailContainer() {
     let [data, setData] = useState({});
 
- const { id } = useParams()
+ const { idItem } = useParams()
 
     useEffect(() => {
-        getSingleItems(id).then((respuestaDatos) => 
+        getSingleItems(idItem).then((respuestaDatos) => 
             setData(respuestaDatos));
-    },[id]);
+    },[idItem]);
 
     return (
         <ItemDetail 
-            img={data.img}
             key={data.id} 
+            img={data.img}
             title={data.title}
             detail={data.detail}
             price={data.price}

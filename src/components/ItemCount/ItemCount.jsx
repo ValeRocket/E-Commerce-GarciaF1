@@ -7,7 +7,7 @@ function ItemCount(props){
 const [count, setCount] = React.useState(props.initial)
 
   function handleClickSuma() {
-    if(count == props.stock){
+    if(count === props.stock){
       swal({
         title: "No hay mas stock",
         icon: "error"
@@ -19,7 +19,7 @@ const [count, setCount] = React.useState(props.initial)
   }
 
   function handleClickResta() {
-    if(count == 1){
+    if(count === 1){
       swal({
         title: "No puedes comprar menos de 1 producto ",
         icon: "error"
