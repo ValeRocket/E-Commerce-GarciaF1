@@ -1,46 +1,61 @@
 import React from "react";
-import swal from 'sweetalert';
+import { useState } from 'react';
+import { AiOutlineShoppingCart } from "react-icons/ai"
 import "./ItemCount.css"
 
 
-function ItemCount(props){
-const [count, setCount] = React.useState(props.initial)
+function ItemCount({onAddToCart}) {
 
-  function handleClickSuma() {
-    if(count === props.stock){
-      swal({
-        title: "No hay mas stock",
-        icon: "error"
-      });
-  }else{
-      setCount(count + 1);
-    }
-    props.stock = props.stock - count;
+  const [values, setValues] = useState({ contador: 1, stock: 5 });
+  const onAdd = () => {
+      if (values.contador < 5) {
+          setValues({ contador: values.contador + 1, stock: values.stock - 1 });
+      }
+      if (values.stock <= 1) {
+          alert('No podes sumar mas productos', {
+              position: "top-left",
+              autoClose: 800,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              className: 'toastify-warning'
+              });
+      }
   }
 
-  function handleClickResta() {
-    if(count === 1){
-      swal({
-        title: "No puedes comprar menos de 1 producto ",
-        icon: "error"
-      });
-  }else{
-    setCount(count - 1);
+  const onDel = () => {
+      if (values.contador > 1) {
+          setValues({ contador: values.contador - 1, stock: values.stock + 1 });
+      }
   }
-}
 
-  return(
-    <div className="botonera">
-      <div>
-      <button onClick={handleClickResta} type="button" className="btn btn-outline-">-</button>
-      <span>{count}</span>
-      <button onClick={handleClickSuma} type="button" className="btn btn-outline-">+</button>
-      </div>
+  return (
+      <div className='count-container'>
+          <div className='item-count-container'>
+              <button
+                  className='btn-resta'
+                  onClick={onDel}
+                  variant="dark">-</button>
+              <span className='contador'>{values.contador}</span>
+              <button
+                  className='btn-suma'
+                  onClick={onAdd}
+                  variant="dark">+</button>
+          </div>
+          <div className='stock'>
+              Stock: {values.stock}
+          </div>
+          <button onClick={() => onAddToCart(values.contador)} variant='dark' className='detail-button'>
+                <AiOutlineShoppingCart className="cart-icon-button addCart" />
+                Agregar al carrito
+            </button>
+          <div>
     </div>
-  )
+
+      </div>
+  );
 }
 
 export default ItemCount
-
 
 
