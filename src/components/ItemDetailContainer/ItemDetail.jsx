@@ -1,14 +1,16 @@
-import React, {useState} from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount'
-import { AiOutlineShoppingCart } from "react-icons/ai"
 import "./ItemDetail.css"
+import { cartCtx } from "../../context/cartContext";
 
-function ItemDetail(props) {
+function ItemDetail({props}) {
+const { addItem } = useContext(cartCtx);
 
 const [estadoCart, setEstadoCart] = React.useState(false);
 
-const handleAddToCart = () => {
+function handleAddToCart(count) {
+    addItem(props,count)
     setEstadoCart(true);
 }   
     return (
