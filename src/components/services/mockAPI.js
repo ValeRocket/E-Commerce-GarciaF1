@@ -25,6 +25,15 @@ const data = [
         category: "buzos",
         detail: "Buzo Mercedes 100% algodon",
         img: "https://http2.mlstatic.com/D_NQ_NP_720238-MLA50995928757_082022-O.webp",
+    },
+    {
+        id: 4,
+        title: "Casco Ayrton Senna",
+        price: 9000,
+        stock: 10,
+        category: "cascos",
+        detail: "casco original ayrton senna 1988",
+        img: "https://http2.mlstatic.com/D_NQ_NP_758396-MLA49256090446_032022-O.webp"
     }
 ];
 

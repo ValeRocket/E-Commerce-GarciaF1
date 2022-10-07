@@ -45,7 +45,7 @@ function ItemCount({onAddToCart}) {
           <div className='stock'>
               Stock: {values.stock}
           </div>
-          <button onClick={() => onAddToCart(values.contador)} variant='dark' className='detail-button'>
+          <button onClick={() => onAddToCart(values.contador)} variant='dark' className='btn btn-primary'>
                 <AiOutlineShoppingCart className="cart-icon-button addCart" />
                 Agregar al carrito
             </button>
