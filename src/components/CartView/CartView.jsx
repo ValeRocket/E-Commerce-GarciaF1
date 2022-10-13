@@ -4,27 +4,27 @@ import { cartCtx } from "../../context/cartContext";
 
 function CartView() {
   const context = useContext(cartCtx);
-  const { cart, clearCart, removeFromCart } = context;
+  const { cart, deleteItem } = context;
 
   let carritovacio = false;
 
   if (carritovacio) {
     return <div>Tu carrito está vacio...</div>;
+  }else{
+    return (
+      <div>
+        {cart.map((props) => (
+          <div>
+            <p>{"Cantidad de Items: "+props.count}</p>
+            <p>{"Precio $"+props.price}</p>
+            <p>{"Total: "+props.price*props.count}</p>
+            <button del={deleteItem}>Eliminar Items</button>
+          </div>
+        ))}
+      </div>
+    );
   }
-
-  return (
-    <div>
-      {cart.map((props) => (
-        <div>
-          <h3>{"Productos: " + props.title}</h3>
-          <p>{"Precio $"+props.price}</p>
-          <p>{"Cantidad: "+props.count}</p>
-          <p>{"Total: "+props.price*props.count}</p>
-          
-        </div>
-      ))}
-    </div>
-  );
+  
 }
 
 export default CartView;

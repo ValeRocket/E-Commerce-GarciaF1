@@ -1,19 +1,19 @@
 import "./ItemListContainer.css"
 import React from "react";
 import ItemList from "./ItemList";
-import getItems, { getItemsByCategory } from "../services/mockAPI";
+import { getItems, getItemsByCategory } from "../services/firestore";
 import { useEffect } from "react";
 import {useParams} from "react-router-dom"
 
 function ItemListContainer(props){
     let {greeting} = props;
     const [data, setData] = React.useState([]);
-
     const {cat} = useParams()
 
     useEffect(() => {
         if(cat === undefined){
-            getItems().then((respuestaData) => setData(respuestaData))
+            getItems()
+            .then((respuestaData) => setData(respuestaData))
         }else{
             getItemsByCategory(cat).then((respuestaData) => setData(respuestaData))
         }
